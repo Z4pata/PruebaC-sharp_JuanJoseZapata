@@ -17,7 +17,13 @@ veterinary.Cats.Add(new Cat(5, "pelusa", new DateOnly(2000, 7, 8), "otro", "gris
 
 // ----------------------------------------------------------------------------------------------------------------------
 
-int Id = 0;
+// En esta ocasion el contador de Id empezara en 5 ya que ya he quemado datos con los Ids del 0 al 5
+
+int Id = 5;
+
+// ------
+
+
 while (true)
 {
     Console.Clear();
@@ -37,16 +43,21 @@ while (true)
                 switch (dogOpc)
                 {
                     case "1":
+                        // cada que alguien quiera ingresar un paciente se le suma uno a la variable Id
                         Id += 1;
+                        // El metodo CreateDog me recibe ese id y me instancia un paciente con ese Id
                         veterinary.SaveDog(ManagerApp.CreateDog(Id));
                         VisualInterfaces.ShowSaveSuccesful();
                         ManagerApp.ShowFooter();
                         break;
                     case "2":
+                    // Se pide un id para poder actualizar
                         int updateSearch = Settings.ValidateInt("Ingresa el Id del perrito que deseas actualizar: ");
 
+                        // Encuentra un perro en la lista con ese Id
                         var updatedDog = veterinary.Dogs.Find(d => d.PublicId == updateSearch);
 
+                        // Llama al metodo UpdateDog dandole como argumento a ese perro que se encontro
                         veterinary.UpdateDog(updatedDog);
 
                         ManagerApp.ShowFooter();
@@ -70,7 +81,7 @@ while (true)
 
                         while (pFlag)
                         {
-                            
+
                             Console.Clear();
                             var patient = veterinary.Dogs.Find(d => d.PublicId == idSearch);
 
@@ -113,7 +124,7 @@ while (true)
                         break;
                 }
             }
-            
+
             break;
 
         case "2":
@@ -126,6 +137,7 @@ while (true)
                 switch (catOpc)
                 {
                     case "1":
+                        // cada que alguien quiera ingresar un paciente se le suma uno a la variable Id
                         Id += 1;
                         veterinary.SaveCat(ManagerApp.CreateCat(Id));
                         VisualInterfaces.ShowSaveSuccesful();
@@ -154,15 +166,15 @@ while (true)
                         veterinary.ShowAnimals("gato");
                         ManagerApp.ShowFooter();
                         break;
-                    
+
                     case "5":
-                    int idSearch = Settings.ValidateInt("Ingrese el Id del gatito: ");
+                        int idSearch = Settings.ValidateInt("Ingrese el Id del gatito: ");
 
                         bool pFlag = veterinary.ShowPatient(idSearch);
                         ManagerApp.ShowFooter();
                         while (pFlag)
                         {
-                            
+
                             Console.Clear();
                             var patient = veterinary.Cats.Find(d => d.PublicId == idSearch);
 
@@ -239,12 +251,12 @@ while (true)
                         veterinary.ShowAnimals("gato");
                         ManagerApp.ShowFooter();
                         break;
-                    
+
                     case "0":
                         searchesFlag = false;
                         ManagerApp.ShowFooter();
                         break;
-                    
+
                     default:
                         VisualInterfaces.ShowInputError();
                         break;

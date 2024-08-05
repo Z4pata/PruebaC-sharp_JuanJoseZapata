@@ -8,6 +8,7 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
 {
     public static class VisualInterfaces
     {
+        // ------------------------------------------- ERRORES ---------------------------------------
         public static void ShowNumberError()
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -44,6 +45,8 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
             Console.WriteLine("El pelo ya esta corto!!");
             Console.ForegroundColor = ConsoleColor.White;
         }
+
+        // ----------------------------------------- Mensajes de Encontrado ------------------------------
         public static void ShowDeleteSuccesful(string prompt)
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -62,6 +65,8 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
             Console.WriteLine($"El Paciente se ha guardado exitosamente!!");
             Console.ForegroundColor = ConsoleColor.White;
         }
+
+        // ------------------------------------ Interfaces --------------------------------------------------
 
         public static string ShowMainMenu()
         {

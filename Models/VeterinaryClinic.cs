@@ -35,14 +35,19 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
         }
         public void UpdateDog(Dog dog)
         {
+            // Busca si hay algun perro igual al que ya se encontro previamente
             if (Dogs.Any(d => d == dog))
             {
+                // Si lo hay saca si indes dentro de la lista Dogs
                 var index = Dogs.IndexOf(dog);
-
+                
+                // Y remplaza el que esta en la posicion anteriormente sacada
+                // Por uno que se va a crear completamente nuevo desde cero
                 Dogs[index] = ManagerApp.CreateDog(Dogs[index].PublicId);
             }
             else
             {
+                // Si no lo encuentra Saca un error
                 VisualInterfaces.ShowFindError();
             }
 

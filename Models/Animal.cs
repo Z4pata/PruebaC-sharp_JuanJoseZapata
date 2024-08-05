@@ -8,9 +8,14 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
     public abstract class Animal
     {
         protected int Id { get; set; }
-        public int PublicId { get { return Id; } set { Id = PublicId; } }
         protected string Name { get; set; }
+        // -----------------------------------------------------------------------------------------------------
+
+        // Propiedades publicas para poder acceder a los valores de las propiedades en protected
+        public int PublicId { get { return Id; } set { Id = PublicId; } }
         public string PublicName { get { return Name; } set { Name = PublicName; } }
+        
+        // -----------------------------------------------------------------------------------------------------
         protected DateOnly BirthDate { get; set; }
         protected string Breed { get; set; }
         protected string Color { get; set; }
