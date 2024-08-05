@@ -38,7 +38,7 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
 
             string barkVolume = Settings.ValidateString("Que tan fuerte ladra?: ");
 
-            string coatType = Settings.ValidateCoatType();
+            string coatType = Settings.ValidateHair();
 
             return new Dog(Id, name, birthDate, breed, color, weightInKg, breedingStatus, temperament, microchipNumber, barkVolume, coatType);
 
@@ -68,7 +68,7 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
 
             bool breedingStatus = Settings.ValidateBool("Puede criar?(si/no): ");
 
-            string furLength = Settings.ValidateCoatType();
+            string furLength = Settings.ValidateHair();
 
             return new Cat(Id, name, birthDate, breed, color, weightInKg, breedingStatus, furLength);
 

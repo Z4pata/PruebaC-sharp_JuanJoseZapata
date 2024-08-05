@@ -81,7 +81,7 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
             }
         }
 
-        public static string ValidateCoatType()
+        public static string ValidateHair()
         {
             string[] coatTypes = ["sin pelo", "pelo corto", "pelo mediano", "pelo largo"];
 
