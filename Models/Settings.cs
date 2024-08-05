@@ -134,7 +134,7 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
             while (true)
             {
                 int year = ValidateInt(prompt);
-                if (year < DateTime.Now.Year)
+                if (year <= DateTime.Now.Year)
                 {
                     return year;
                 }
@@ -150,7 +150,7 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
             while (true)
             {
                 int month = ValidateInt(prompt);
-                if (month < 12)
+                if (month <= 12)
                 {
                     return month;
                 }
