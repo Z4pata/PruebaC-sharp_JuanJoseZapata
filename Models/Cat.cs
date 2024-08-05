@@ -27,9 +27,17 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
                 Console.WriteLine("El animal ya está castrado!!");
             }
         }
-        public void Hairdress(){
-            FurLength = "corto";
-            Console.WriteLine($"El amiguito {Name} ha sido motilado con exito");
+        public void Hairdress()
+        {
+            if (FurLength == "sin pelo" || FurLength == "pelo corto")
+            {
+                VisualInterfaces.ShowHairCutError();
+            }
+            else
+            {
+                FurLength = "pelo corto";
+                VisualInterfaces.ShowHairCutSuccesful();
+            }
         }
 
         public override void ShowInformation()
