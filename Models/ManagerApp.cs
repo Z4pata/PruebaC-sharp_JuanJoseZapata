@@ -98,5 +98,12 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
             Console.ForegroundColor = ConsoleColor.White;
 
         }
+
+        public static void ShowSeparator()
+        {
+            Console.WriteLine(@$"
+                -----------------------------------------------
+            ");
+        }
     }
 }
