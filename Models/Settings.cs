@@ -58,5 +58,26 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
                 }
             }
         }
+
+        public static bool ValidateBool(string prompt)
+        {
+            while (true)
+            {
+                Console.Write(prompt);
+                string opc = Console.ReadLine() ?? " ";
+
+                switch (opc.Trim().ToLower()){
+                    case "si":
+                        return true;
+                    
+                    case "no":
+                        return false;
+                    
+                    default:
+                        VisualInterfaces.ShowInputError();
+                        break;
+                }
+            }
+        }
     }
 }
