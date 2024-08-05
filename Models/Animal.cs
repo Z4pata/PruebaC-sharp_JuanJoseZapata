@@ -8,7 +8,9 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
     public class Animal
     {
         protected int Id { get; set; }
+        public int PublicId { get { return Id; } set { Id = PublicId; } }
         protected string Name { get; set; }
+        public string PublicName { get { return Name; } set { Name = PublicName; } }
         protected DateOnly BirthDate { get; set; }
         protected string Breed { get; set; }
         protected string Color { get; set; }
@@ -39,8 +41,9 @@ Peso en Kg: {WeightInKg}");
 
         }
 
-        protected int CalculateAgeInMonths(){
-            int ageInYears= DateTime.Now.Year - BirthDate.Year;
+        protected int CalculateAgeInMonths()
+        {
+            int ageInYears = DateTime.Now.Year - BirthDate.Year;
             return ageInYears * 12;
         }
 
