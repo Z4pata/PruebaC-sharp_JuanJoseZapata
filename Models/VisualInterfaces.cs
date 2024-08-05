@@ -12,5 +12,10 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
             Console.WriteLine("Error: Debes ingresar un numero!!");
             Console.ForegroundColor = ConsoleColor.White;
         }
+        public static void ShowInputError(){
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Error: No has ingresado una opcion valida!!");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
     }
 }
