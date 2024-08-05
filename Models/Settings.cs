@@ -28,12 +28,34 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
                 string sAvalidar = Console.ReadLine() ?? " ";
 
                 int result;
-                if (int.TryParse(sAvalidar, out result)){
+                if (int.TryParse(sAvalidar, out result))
+                {
                     return result;
-                } else {
+                }
+                else
+                {
                     VisualInterfaces.ShowNumberError();
                 }
 
+            }
+        }
+
+        public static double ValidateDouble(string prompt)
+        {
+            while (true)
+            {
+                Console.Write(prompt);
+                string sAvalidar = Console.ReadLine() ?? " ";
+
+                double result;
+                if (double.TryParse(sAvalidar, out result))
+                {
+                    return result;
+                }
+                else
+                {
+                    VisualInterfaces.ShowNumberError();
+                }
             }
         }
     }
