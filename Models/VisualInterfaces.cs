@@ -41,7 +41,13 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
         public static void ShowHairCutSuccesful()
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"El tu peludito ya no es tan peludito!!");
+            Console.WriteLine($"Tu peludito ya no es tan peludito!!");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+        public static void ShowSaveSuccesful()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"El Paciente se ha guardado exitosamente!!");
             Console.ForegroundColor = ConsoleColor.White;
         }
 
