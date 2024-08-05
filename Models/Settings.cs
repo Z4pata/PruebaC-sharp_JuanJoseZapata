@@ -83,15 +83,15 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
 
         public static string ValidateCoatType()
         {
-            string[] coatTypes = ["liso", "aspero", "suelto", "duro"];
+            string[] coatTypes = ["sin pelo", "pelo corto", "pelo mediano", "pelo largo"];
 
             while (true)
             {
                 Console.WriteLine(@"Que tipo de pelaje tiene?
-    - Liso
-    - Aspero
-    - suelto
-    - duro");
+    - Sin pelo
+    - Pelo corto
+    - Pelo mediano
+    - Pelo largo");
                 string coatType = ValidateString("==> ").ToLower();
 
                 if (coatTypes.Contains(coatType))
@@ -116,7 +116,7 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
     - Normal
     - Agresivo");
 
-                string temperament = ValidateString("==> ");
+                string temperament = ValidateString("==> ").ToLower();
 
                 if (temperaments.Contains(temperament))
                 {
