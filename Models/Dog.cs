@@ -33,8 +33,17 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
                 Console.WriteLine("El animal ya está castrado!!");
             }
         }
-        public void Hairdress(){
-            Console.WriteLine($"El amiguito {Name} ha sido motilado con exito");
+        public void Hairdress()
+        {
+            if (CoatType == "sin pelo" || CoatType == "pelo corto")
+            {
+                VisualInterfaces.ShowHairCutError();
+            }
+            else
+            {
+                CoatType = "pelo corto";
+                VisualInterfaces.ShowHairCutSuccesful();
+            }
         }
 
         public override void ShowInformation()
