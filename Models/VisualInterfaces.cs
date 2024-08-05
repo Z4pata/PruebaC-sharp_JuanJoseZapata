@@ -80,7 +80,7 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
                 
                 0. Salir");
 
-                return Settings.ValidateString("==> ");
+            return Settings.ValidateString("==> ");
         }
         public static string ShowCatsMenu()
         {
@@ -95,7 +95,23 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
                 
                 0. Salir");
 
-                return Settings.ValidateString("==> ");
+            return Settings.ValidateString("==> ");
+        }
+
+        public static string ShowSearchesMenu()
+        {
+            ManagerApp.ShowHeader("Busquedas!");
+            Console.WriteLine(@"
+                Que deseas ver?
+
+                1. Todos los pacientes
+                2. Un paciente en especifico
+                3. Todos los perros
+                4. Todos los gatos
+
+                0. Salir");
+                
+            return Settings.ValidateString("==> ");
         }
     }
 }
