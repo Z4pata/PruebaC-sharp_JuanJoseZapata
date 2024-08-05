@@ -33,6 +33,7 @@ while (true)
 
     switch (opc01)
     {
+        // Caso para todo lo relacionado con perros -----------------------------------------------------
         case "1":
             bool dogFlag = true;
             while (dogFlag)
@@ -42,6 +43,7 @@ while (true)
 
                 switch (dogOpc)
                 {
+                    // Caso para agregar perro ---------------------------------------------------------
                     case "1":
                         // cada que alguien quiera ingresar un paciente se le suma uno a la variable Id
                         Id += 1;
@@ -50,8 +52,10 @@ while (true)
                         VisualInterfaces.ShowSaveSuccesful();
                         ManagerApp.ShowFooter();
                         break;
+
+                    // Caso para actualizar gato ----------------------------------------------------------
                     case "2":
-                    // Se pide un id para poder actualizar
+                        // Se pide un id para poder actualizar
                         int updateSearch = Settings.ValidateInt("Ingresa el Id del perrito que deseas actualizar: ");
 
                         // Encuentra un perro en la lista con ese Id
@@ -62,48 +66,66 @@ while (true)
 
                         ManagerApp.ShowFooter();
                         break;
+
+                    // Caso para eliminar gato ------------------------------------------------------------
                     case "3":
                         int deleteSearch = Settings.ValidateInt("Ingresa el Id del perrito que deseas eliminar: ");
 
                         veterinary.DeleteDog(deleteSearch);
                         ManagerApp.ShowFooter();
                         break;
+
+                    // Caso para mostrar todos los perros ----------------------------------------------
                     case "4":
                         veterinary.ShowAnimals("perro");
                         ManagerApp.ShowFooter();
                         break;
 
+                    // Caso para mostrar un perro en especifico ---------------------------------------
                     case "5":
+                    // Buscamos el perro por el Id
                         int idSearch = Settings.ValidateInt("Ingrese el Id del perrito: ");
 
+                        // Si lo encuentra se muestra y se guarda en la bandera un 'true'
                         bool pFlag = veterinary.ShowPatient(idSearch);
+
+                        // Se muestra el footer
                         ManagerApp.ShowFooter();
 
+                        // Entramos a un bucle para Motilar o castrar ese perro
                         while (pFlag)
                         {
 
                             Console.Clear();
+
+                            // Traemos el perro que se encuentre con el id dado anteriormente
                             var patient = veterinary.Dogs.Find(d => d.PublicId == idSearch);
 
+                            // Mostramos en consola el menu y recibimos una opcion
                             string pOpc = VisualInterfaces.ShowPatientMenu("perro");
 
+                            
                             switch (pOpc)
                             {
+                                // Caso para cortar el cabello ---------
                                 case "1":
                                     patient.Hairdress();
                                     ManagerApp.ShowFooter();
                                     break;
 
+                                // Caso para castrar ---------------------
                                 case "2":
                                     patient.CastrateAnimal();
                                     ManagerApp.ShowFooter();
                                     break;
 
+                                // Caso Para Salir ----------------
                                 case "0":
                                     pFlag = false;
                                     ManagerApp.ShowFooter();
                                     break;
 
+                                // Manejo de excepcion ----------------
                                 default:
                                     VisualInterfaces.ShowInputError();
                                     ManagerApp.ShowFooter();
@@ -114,10 +136,13 @@ while (true)
                         }
                         break;
 
+                    // Caso para salir del menu de los perros ------------------------------------
                     case "0":
                         dogFlag = false;
                         ManagerApp.ShowFooter();
                         break;
+                    
+                    // Manejo de excepcion -------------------------------------------
                     default:
                         VisualInterfaces.ShowInputError();
                         ManagerApp.ShowFooter();
@@ -127,15 +152,20 @@ while (true)
 
             break;
 
+
+        // Caso para todo lo relacionado con gatos --------------------------------------------------------
         case "2":
             bool catFlag = true;
             while (catFlag)
             {
                 Console.Clear();
+
+                // Entramos al menu de los gatos y sacamos la opcion que nos de el usuario -----
                 string catOpc = VisualInterfaces.ShowCatsMenu();
 
                 switch (catOpc)
                 {
+                    // Caso para agregar gato --------------------------------------------------------------------------
                     case "1":
                         // cada que alguien quiera ingresar un paciente se le suma uno a la variable Id
                         Id += 1;
@@ -144,6 +174,7 @@ while (true)
                         ManagerApp.ShowFooter();
                         break;
 
+                    // Caso para actualizar gato ------------------------------------------------------------------------------
                     case "2":
                         int updateSearchCat = Settings.ValidateInt("Ingresa el Id del gatito que deseas actualizar: ");
 
@@ -154,6 +185,7 @@ while (true)
                         ManagerApp.ShowFooter();
                         break;
 
+                    // Caso para eliminar gato -----------------------------------------------------------------------------------
                     case "3":
                         int deleteSearchCat = Settings.ValidateInt("Ingresa el Id del gatito qur deseas eliminar: ");
 
@@ -161,13 +193,17 @@ while (true)
 
                         ManagerApp.ShowFooter();
                         break;
-
+                
+                    // Caso para mostrar todos los gatos ---------------------------------------------------------------------------
                     case "4":
                         veterinary.ShowAnimals("gato");
                         ManagerApp.ShowFooter();
                         break;
 
+                    // Caso para mostrar un unico gato -------------------------------------------------------------------
                     case "5":
+
+                    // Repetimos el proceso realizado en los perros -----------------------
                         int idSearch = Settings.ValidateInt("Ingrese el Id del gatito: ");
 
                         bool pFlag = veterinary.ShowPatient(idSearch);
@@ -192,6 +228,7 @@ while (true)
                                     ManagerApp.ShowFooter();
                                     break;
 
+                                // Caso para salir del menu de corte o castracion ------
                                 case "0":
                                     pFlag = false;
                                     ManagerApp.ShowFooter();
@@ -206,7 +243,8 @@ while (true)
 
                         }
                         break;
-
+                    
+                    // Caso para salir del menu de los gatos ---------------------------------------------------------
                     case "0":
                         catFlag = false;
                         ManagerApp.ShowFooter();
@@ -219,7 +257,7 @@ while (true)
                 }
             }
             break;
-
+        // Caso para busquedas en conjunto entre gatos y perros -----------------------------------------------------
         case "3":
             bool searchesFlag = true;
             while (searchesFlag)
@@ -230,11 +268,13 @@ while (true)
 
                 switch (searchesOpc)
                 {
+                    // Buscar todos los pacientes, gatos y perros unidos ---------
                     case "1":
                         veterinary.ShowAllPatients();
                         ManagerApp.ShowFooter();
                         break;
 
+                    // Buscar por ID ------
                     case "2":
                         int idSearch = Settings.ValidateInt("Ingrese el Id del paciente: ");
 
@@ -242,16 +282,19 @@ while (true)
                         ManagerApp.ShowFooter();
                         break;
 
+                    // Mostrar todos los perros -----
                     case "3":
                         veterinary.ShowAnimals("perro");
                         ManagerApp.ShowFooter();
                         break;
 
+                    // Mostrar todos los gatos ---------
                     case "4":
                         veterinary.ShowAnimals("gato");
                         ManagerApp.ShowFooter();
                         break;
 
+                    // Salir del menu de busquedas -------
                     case "0":
                         searchesFlag = false;
                         ManagerApp.ShowFooter();
@@ -264,10 +307,14 @@ while (true)
             }
             break;
 
+            
+        // Caso de exit
         case "0":
             ManagerApp.ShowFooter();
             return;
 
+
+        // Manejo de exepcion
         default:
             VisualInterfaces.ShowInputError();
             ManagerApp.ShowFooter();

@@ -7,6 +7,8 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
 {
     public class ManagerApp
     {
+
+        // ------------------------------- Crear Perro ---------------------------------------
         public static Dog CreateDog(int _id)
         {
             int Id = _id;
@@ -44,6 +46,9 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
 
         }
 
+
+        // ---------------------------------------- Crear Gato --------------------------------------------------
+
         public static Cat CreateCat(int _id)
         {
             int Id = _id;
@@ -74,6 +79,8 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
             return new Cat(Id, name, birthDate, breed, color, weightInKg, breedingStatus, furLength);
 
         }
+
+        // ----------------------- Metodos para mostrar ------------------------------------------
 
         public static void ShowHeader(string prompt)
         {
