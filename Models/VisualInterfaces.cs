@@ -82,5 +82,20 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
 
                 return Settings.ValidateString("==> ");
         }
+        public static string ShowCatsMenu()
+        {
+            ManagerApp.ShowHeader("Gatitos 😺");
+            Console.WriteLine(@"
+                Que deseas hacer?
+
+                1. Agregar paciente
+                2. Actualizar paciente
+                3. Eliminar paciente
+                4. Mostrar todos los gatitos a nuestro cargo
+                
+                0. Salir");
+
+                return Settings.ValidateString("==> ");
+        }
     }
 }
