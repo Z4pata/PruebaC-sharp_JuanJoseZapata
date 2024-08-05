@@ -28,7 +28,7 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
 
         public abstract void ShowInformation();
 
-        public void BasicReview()
+        protected void BasicReview()
         {
             Console.WriteLine(@$"ID: {Id}
 Nombre: {Name}
