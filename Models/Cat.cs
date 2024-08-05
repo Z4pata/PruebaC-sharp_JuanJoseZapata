@@ -31,6 +31,18 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
             FurLength = "corto";
             Console.WriteLine($"El amiguito {Name} ha sido motilado con exito");
         }
+
+        public override void ShowInformation()
+        {
+            Console.WriteLine(@$"ID: {Id}
+Nombre: {Name}
+Fecha de nacimiento: {BirthDate}
+Raza: {Breed}
+Color: {Color}
+Peso en Kg: {WeightInKg}
+Puede criar?: {BreedingStatus}
+Longitud del cabello: {FurLength}");
+        }
     
     }
 }

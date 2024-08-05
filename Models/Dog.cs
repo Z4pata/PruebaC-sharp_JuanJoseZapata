@@ -36,5 +36,20 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
         public void Hairdress(){
             Console.WriteLine($"El amiguito {Name} ha sido motilado con exito");
         }
+
+        public override void ShowInformation()
+        {
+            Console.WriteLine(@$"ID: {Id}
+Nombre: {Name}
+Fecha de nacimiento: {BirthDate}
+Raza: {Breed}
+Color: {Color}
+Peso en Kg: {WeightInKg}
+Puede criar?: {BreedingStatus}
+Temperamento: {Temperament}
+Numero del microchip: {MicrochipNumber}
+Tono del ladrido: {BarkVolume}
+Tipo de pelaje: {CoatType}");
+        }
     }
 }
