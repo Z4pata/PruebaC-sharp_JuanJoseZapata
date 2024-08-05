@@ -38,5 +38,18 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
             Console.WriteLine($"El tu peludito ya no es tan peludito!!");
             Console.ForegroundColor = ConsoleColor.White;
         }
+
+        public static string ShowMainMenu(){
+            Console.WriteLine(@"
+                Tipo de paciente
+
+                1. Perro
+
+                2. Gato
+
+                0. Salir");
+
+            return Settings.ValidateString("==> ");
+        }
     }
 }
