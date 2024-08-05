@@ -88,13 +88,25 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
                 VisualInterfaces.ShowFindError();
             }
         }
-        public void ShowAllPatients(){
+        public void ShowAllPatients()
+        {
             Dogs.ForEach(d => d.ShowInformation());
             Cats.ForEach(c => c.ShowInformation());
         }
         public void ShowAnimals(string type)
         {
-            
+            if (type == "perro")
+            {
+                Dogs.ForEach(d => d.ShowInformation());
+            }
+            else if (type == "gato")
+            {
+                Cats.ForEach(c => c.ShowInformation());
+            }
+            else
+            {
+                VisualInterfaces.ShowInputError();
+            }
         }
     }
 }
