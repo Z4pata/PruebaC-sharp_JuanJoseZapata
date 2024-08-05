@@ -28,6 +28,7 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
             }
         }
         public void Hairdress(){
+            FurLength = "corto";
             Console.WriteLine($"El amiguito {Name} ha sido motilado con exito");
         }
     
