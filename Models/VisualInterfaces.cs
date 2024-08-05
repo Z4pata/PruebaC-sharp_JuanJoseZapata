@@ -23,5 +23,10 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
             Console.WriteLine("Error: Este elemento no existe dentro de la lista!!");
             Console.ForegroundColor = ConsoleColor.White;
         }
+        public static void ShowDeleteSuccesful(string prompt){
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"El {prompt} se ha eliminado correctamente!!");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
     }
 }
