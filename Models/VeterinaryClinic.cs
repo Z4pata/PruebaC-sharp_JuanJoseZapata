@@ -108,23 +108,26 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
                 VisualInterfaces.ShowInputError();
             }
         }
-        public void ShowPatient(int idPatient)
+        public bool ShowPatient(int idPatient)
         {
             if (Dogs.Any(d => d.PublicId == idPatient))
             {
                 var patient = Dogs.First(d => d.PublicId == idPatient);
 
                 patient.ShowInformation();
+                return true;
             } 
             else if (Cats.Any(c => c.PublicId == idPatient))
             {
                 var patient = Cats.First(c=>c.PublicId == idPatient);
 
                 patient.ShowInformation();
+                return true;
             }
             else
             {
                 VisualInterfaces.ShowFindError();
+                return false;
             }
         }
     }
