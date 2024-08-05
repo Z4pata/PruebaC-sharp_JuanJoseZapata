@@ -16,8 +16,8 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
 
             Console.WriteLine(" -- Fecha de nacimiento -- ");
 
-            int year = Settings.ValidateInt("Año: ");
-            int month = Settings.ValidateInt("Mes: ");
+            int year = Settings.ValidateYear("Año: ");
+            int month = Settings.ValidateMonth("Mes: ");
             int day = Settings.ValidateInt("Dia: ");
 
             DateOnly birthDate = new DateOnly(year, month, day);
@@ -53,8 +53,8 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
 
             Console.WriteLine(" -- Fecha de nacimiento -- ");
 
-            int year = Settings.ValidateInt("Año: ");
-            int month = Settings.ValidateInt("Mes: ");
+            int year = Settings.ValidateYear("Año: ");
+            int month = Settings.ValidateMonth("Mes: ");
             int day = Settings.ValidateInt("Dia: ");
 
             DateOnly birthDate = new DateOnly(year, month, day);
