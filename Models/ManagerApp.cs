@@ -30,7 +30,7 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
 
             // --------------------- Dog properties -----------------
 
-            bool breedingStatus = Settings.ValidateBool("Ya ha sido castrado?(si/no): ");
+            bool breedingStatus = Settings.ValidateBool("Puede criar?(si/no): ");
 
             string temperament = Settings.ValidateString("Que temperamento tiene?: ");
 
@@ -66,7 +66,7 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
 
             // -------------------------- cat properties --------------------------
 
-            bool breedingStatus = Settings.ValidateBool("Ya ha sido castrado?(si/no): ");
+            bool breedingStatus = Settings.ValidateBool("Puede criar?(si/no): ");
 
             string furLength = Settings.ValidateString("Que tan largo tiene el pelo?: ");
 
