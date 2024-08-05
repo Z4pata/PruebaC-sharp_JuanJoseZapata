@@ -50,6 +50,9 @@ Color: {Color}
 Peso en Kg: {WeightInKg}
 Puede criar?: {BreedingStatus}
 Longitud del cabello: {FurLength}");
+
+            ManagerApp.ShowSeparator();
+
         }
     
     }

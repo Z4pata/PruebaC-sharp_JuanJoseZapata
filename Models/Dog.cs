@@ -59,6 +59,8 @@ Temperamento: {Temperament}
 Numero del microchip: {MicrochipNumber}
 Tono del ladrido: {BarkVolume}
 Tipo de pelaje: {CoatType}");
+
+            ManagerApp.ShowSeparator();
         }
     }
 }
