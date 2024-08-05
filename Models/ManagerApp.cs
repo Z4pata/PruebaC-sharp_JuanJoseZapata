@@ -82,7 +82,7 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
             |                                                        |
             |                                                        |
             |                                                        |
-            |                      {prompt}                          |
+            |       {prompt, -23}                          |
             |                                                        |
             |                                                        |
             |                                                        |
