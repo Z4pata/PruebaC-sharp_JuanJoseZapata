@@ -128,5 +128,37 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
                 }
             }
         }
+
+        public static int ValidateYear(string prompt)
+        {
+            while (true)
+            {
+                int year = ValidateInt(prompt);
+                if (year < DateTime.Now.Year)
+                {
+                    return year;
+                }
+                else
+                {
+                    VisualInterfaces.ShowYearError();
+                }
+            }
+        }
+
+        public static int ValidateMonth(string prompt)
+        {
+            while (true)
+            {
+                int month = ValidateInt(prompt);
+                if (month < 12)
+                {
+                    return month;
+                }
+                else
+                {
+                    VisualInterfaces.ShowMonthError();
+                }
+            }
+        }
     }
 }
