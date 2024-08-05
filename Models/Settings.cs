@@ -66,16 +66,38 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
                 Console.Write(prompt);
                 string opc = Console.ReadLine() ?? " ";
 
-                switch (opc.Trim().ToLower()){
+                switch (opc.Trim().ToLower())
+                {
                     case "si":
                         return true;
-                    
+
                     case "no":
                         return false;
-                    
+
                     default:
                         VisualInterfaces.ShowInputError();
                         break;
+                }
+            }
+        }
+
+        public static string ValidateCoatType()
+        {
+            string[] coatTypes = ["liso", "aspero", "suelto", "duro"];
+
+            while (true)
+            {
+                Console.WriteLine(@"Que tipo de pelaje tiene?
+    - Liso
+    - Aspero
+    - suelto
+    - duro");
+                string coatType = ValidateString("==> ").ToLower();
+
+                if (coatTypes.Contains(coatType)){
+                    return coatType;
+                } else {
+                    VisualInterfaces.ShowInputError();
                 }
             }
         }
