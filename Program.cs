@@ -6,13 +6,13 @@ var veterinary = new VeterinaryClinic("Veterinaria", "Calle 51 #56A-49");
 
 // ------------------------------------------- QUEMO DATOS --------------------------------------------------------------
 
-veterinary.Dogs.Add(new Dog(0, "Juan", new DateOnly(2014, 9, 06), "pinscher", "verde", 12.5, true, "timido", "122349", "mucho", "pelo largo"));
+veterinary.Dogs.Add(new Dog(0, "Juan", new DateOnly(2014, 9, 06), "pinscher", "verde", 12.5, true, "timido", "122349", "mucho", "pelo corto"));
 veterinary.Dogs.Add(new Dog(1, "Carlos", new DateOnly(2010, 12, 06), "Pinscher", "cafe", 8, true, "normal", "122349", "mucho", "pelo largo"));
 veterinary.Dogs.Add(new Dog(2, "Andres", new DateOnly(2014, 3, 06), "doberman", "negro", 30, true, "agresivo", "5675", "poco", "pelo largo"));
 
 
 veterinary.Cats.Add(new Cat(3, "Black", new DateOnly(2000, 5, 17), "egipcio", "rosado", 5, true, "pelo largo"));
-veterinary.Cats.Add(new Cat(4, "Blue", new DateOnly(2000, 6, 20), "otro", "cafe", 8, true, "pelo largo"));
+veterinary.Cats.Add(new Cat(4, "Blue", new DateOnly(2000, 6, 20), "otro", "cafe", 8, true, "sin pelo"));
 veterinary.Cats.Add(new Cat(5, "pelusa", new DateOnly(2000, 7, 8), "otro", "gris", 3, true, "pelo largo"));
 
 // ----------------------------------------------------------------------------------------------------------------------
@@ -159,9 +159,10 @@ while (true)
                     int idSearch = Settings.ValidateInt("Ingrese el Id del gatito: ");
 
                         bool pFlag = veterinary.ShowPatient(idSearch);
+                        ManagerApp.ShowFooter();
                         while (pFlag)
                         {
-                            ManagerApp.ShowFooter();
+                            
                             Console.Clear();
                             var patient = veterinary.Cats.Find(d => d.PublicId == idSearch);
 
