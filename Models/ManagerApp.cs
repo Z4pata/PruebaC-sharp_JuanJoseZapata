@@ -12,8 +12,8 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
             int Id = _id;
             string name = Settings.ValidateString("Cual es el nombre del perro?: ");
 
-            
-            
+
+
             Console.WriteLine(" -- Fecha de nacimiento -- ");
 
             int year = Settings.ValidateInt("Año: ");
@@ -44,12 +44,13 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
 
         }
 
-        public static Cat CreateCat(int _id){
+        public static Cat CreateCat(int _id)
+        {
             int Id = _id;
             string name = Settings.ValidateString("Cual es el nombre del gato?: ");
 
-            
-            
+
+
             Console.WriteLine(" -- Fecha de nacimiento -- ");
 
             int year = Settings.ValidateInt("Año: ");
@@ -71,6 +72,30 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
             string furLength = Settings.ValidateHair();
 
             return new Cat(Id, name, birthDate, breed, color, weightInKg, breedingStatus, furLength);
+
+        }
+
+        public static void ShowHeader(string prompt)
+        {
+            Console.WriteLine(@$"
+            |========================================================|
+            |                                                        |
+            |                                                        |
+            |                                                        |
+            |                      {prompt}                          |
+            |                                                        |
+            |                                                        |
+            |                                                        |
+            |========================================================|           
+            ");
+        }
+
+        public static void ShowFooter()
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("Presione cualquier tecla...");
+            Console.ReadKey();
+            Console.ForegroundColor = ConsoleColor.White;
 
         }
     }
