@@ -110,8 +110,20 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
                 4. Todos los gatos
 
                 0. Salir");
-                
+
             return Settings.ValidateString("==> ");
+        }
+
+        public static string ShowPatientMenu(){
+            Console.WriteLine(@"
+            Que deseas hacer con este paciente?:
+
+            1. Cortarle el pelo
+            2. Castrarlo
+
+            0. Salir");
+        
+        return Settings.ValidateString("==> ");
         }
     }
 }
