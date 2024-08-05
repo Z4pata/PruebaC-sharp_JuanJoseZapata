@@ -32,7 +32,7 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
 
             bool breedingStatus = Settings.ValidateBool("Puede criar?(si/no): ");
 
-            string temperament = Settings.ValidateString("Que temperamento tiene?: ");
+            string temperament = Settings.ValidateTemperament();
 
             string microchipNumber = Settings.ValidateString("Numero del microchip: ");
 
