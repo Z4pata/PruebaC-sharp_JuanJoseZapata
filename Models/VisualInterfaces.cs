@@ -23,7 +23,7 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
         public static void ShowFindError()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("Error: Este elemento no existe dentro de la lista!!");
+            Console.WriteLine("Error: Este paciente no existe en nuestra base de datos!!");
             Console.ForegroundColor = ConsoleColor.White;
         }
         public static void ShowHairCutError()
@@ -77,6 +77,7 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
                 2. Actualizar paciente
                 3. Eliminar paciente
                 4. Mostrar todos los perritos a nuestro cargo
+                5. Buscar un perrito
                 
                 0. Salir");
 
@@ -92,6 +93,7 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
                 2. Actualizar paciente
                 3. Eliminar paciente
                 4. Mostrar todos los gatitos a nuestro cargo
+                5. Buscar un gatito
                 
                 0. Salir");
 
@@ -114,9 +116,9 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
             return Settings.ValidateString("==> ");
         }
 
-        public static string ShowPatientMenu(){
-            Console.WriteLine(@"
-            Que deseas hacer con este paciente?:
+        public static string ShowPatientMenu(string prompt){
+            Console.WriteLine(@$"
+            Que deseas hacer con este {prompt}?:
 
             1. Cortarle el pelo
             2. Castrarlo
