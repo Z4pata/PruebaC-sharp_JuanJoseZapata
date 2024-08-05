@@ -26,6 +26,18 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
             Console.WriteLine("Error: Este paciente no existe en nuestra base de datos!!");
             Console.ForegroundColor = ConsoleColor.White;
         }
+        public static void ShowYearError()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Error: El año que ingresaste todavia no ha llegado!!");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+        public static void ShowMonthError()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Error: Solo hay 12 meses!!");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
         public static void ShowHairCutError()
         {
             Console.ForegroundColor = ConsoleColor.Red;
