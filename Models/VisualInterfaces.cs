@@ -33,5 +33,10 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
             Console.WriteLine($"El {prompt} se ha eliminado correctamente!!");
             Console.ForegroundColor = ConsoleColor.White;
         }
+        public static void ShowHairCutSuccesful(string prompt){
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"El tu peludito ya no es tan peludito!!");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
     }
 }
