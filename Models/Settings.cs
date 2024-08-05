@@ -94,9 +94,36 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
     - duro");
                 string coatType = ValidateString("==> ").ToLower();
 
-                if (coatTypes.Contains(coatType)){
+                if (coatTypes.Contains(coatType))
+                {
                     return coatType;
-                } else {
+                }
+                else
+                {
+                    VisualInterfaces.ShowInputError();
+                }
+            }
+        }
+
+        public static string ValidateTemperament()
+        {
+            string[] temperaments = ["timido", "normal", "agresivo"];
+
+            while (true)
+            {
+                Console.WriteLine(@"Que temperamento tiene?
+    - Timido
+    - Normal
+    - Agresivo");
+
+                string temperament = ValidateString("==> ");
+
+                if (temperaments.Contains(temperament))
+                {
+                    return temperament;
+                }
+                else
+                {
                     VisualInterfaces.ShowInputError();
                 }
             }
