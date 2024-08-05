@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace PruebaC_sharp_JuanJoseZapata.Models
 {
-    public class Animal
+    public abstract class Animal
     {
         protected int Id { get; set; }
         public int PublicId { get { return Id; } set { Id = PublicId; } }
@@ -26,7 +26,9 @@ namespace PruebaC_sharp_JuanJoseZapata.Models
 
         }
 
-        public void ShowInformation()
+        public abstract void ShowInformation();
+
+        public void BasicReview()
         {
             Console.WriteLine(@$"ID: {Id}
 Nombre: {Name}
@@ -34,11 +36,6 @@ Fecha de nacimiento: {BirthDate}
 Raza: {Breed}
 Color: {Color}
 Peso en Kg: {WeightInKg}");
-        }
-
-        public void BasicReview()
-        {
-
         }
 
         protected int CalculateAgeInMonths()
